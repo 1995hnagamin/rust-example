@@ -27,6 +27,14 @@ struct Table {
 }
 
 fn main() {
+    let table = Arc::new(Table { forks: vec![
+        Mutex::new(()),
+        Mutex::new(()),
+        Mutex::new(()),
+        Mutex::new(()),
+        Mutex::new(()),
+    ]});
+
     let philosophers = vec![
         Philosopher::new("Judith Bulter"),
         Philosopher::new("Gilles Deleuze"),
