@@ -17,7 +17,11 @@ impl Philosopher {
         }
     }
 
-    fn eat(&self) {
+    fn eat(&self, table: &Table) {
+        let _left = table.forks[self.left].lock().unwrap();
+        thread::sleep(Duration::from_millis(150));
+        let _right = table.forks[self.right].lock().unwrap();
+
         println!("{} is eating.", self.name);
         
         thread::sleep(Duration::from_millis(1000));
@@ -48,8 +52,10 @@ fn main() {
     ];
 
     let handles: Vec<_> = philosophers.into_iter().map(|p| {
+        let table = table.clone();
+
         thread::spawn(move || {
-            p.eat();
+            p.eat(&table);
         })
     }).collect();
 
