@@ -11,5 +11,9 @@ impl Philosopher {
 }
 
 fn main() {
-    println!("Hello, world!");
+    let p1 = Philosopher::new("Judith Bulter");
+    let p2 = Philosopher::new("Gilles Deleuze");
+    let p3 = Philosopher::new("Karl Marx");
+    let p4 = Philosopher::new("Emma Goldman");
+    let p5 = Philosopher::new("Michel Foucault");
 }
