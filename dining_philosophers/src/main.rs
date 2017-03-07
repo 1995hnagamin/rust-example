@@ -23,7 +23,7 @@ impl Philosopher {
         let _right = table.forks[self.right].lock().unwrap();
 
         println!("{} is eating.", self.name);
-        
+
         thread::sleep(Duration::from_millis(1000));
 
         println!("{} is done eating.", self.name);
