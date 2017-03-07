@@ -4,3 +4,6 @@ version = "0.1.0"
 authors = ["NAGAMINE Hideaki <1995.hnagamin@gmail.com>"]
 
 [dependencies]
+
+[lib]
+crate-type = ["dylib"]
